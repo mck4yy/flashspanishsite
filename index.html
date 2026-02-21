@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNBHH4V3BL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-CNBHH4V3BL');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlashSpanish - Learn Spanish While Browsing | Hover Translation Extension</title>
@@ -260,6 +268,8 @@
                     target="_blank" rel="noopener noreferrer">Chrome
                     Web Store</a>
             </div>
+            <p class="privacy-notice">This site uses analytics to improve your experience. No personal data is
+                collected.</p>
         </div>
     </footer>
 
@@ -348,7 +358,36 @@
                         demoWords.forEach(w => w.classList.remove('active'));
                     }
                 });
+
+                // Track demo interactions
+                let demoInteracted = false;
+                demoWords.forEach(word => {
+                    word.addEventListener('mouseenter', function () {
+                        if (!demoInteracted && typeof gtag !== 'undefined') {
+                            gtag('event', 'demo_interaction', {
+                                'event_category': 'Engagement',
+                                'event_label': 'Spanish Word Hover',
+                                'value': 1
+                            });
+                            demoInteracted = true;
+                        }
+                    });
+                });
             }
+
+            // Track CTA clicks
+            const ctaButtons = document.querySelectorAll('a[href*="chromewebstore.google.com"]');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'cta_click', {
+                            'event_category': 'Engagement',
+                            'event_label': 'Chrome Web Store CTA',
+                            'value': 1
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
