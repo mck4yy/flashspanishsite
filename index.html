@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashSpanish - Learn Spanish While Browsing | Hover Translation Extension</title>
+    <meta name="description"
+        content="Learn Spanish vocabulary passively while browsing the internet. FlashSpanish shows instant translations when you hover over words. No extra study time needed.">
+
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="FlashSpanish - Learn Spanish While Browsing | Hover Translation Extension">
+    <meta property="og:description"
+        content="Learn Spanish vocabulary passively while browsing the internet. FlashSpanish shows instant translations when you hover over words. No extra study time needed.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org FAQ Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I learn Spanish vocabulary passively without extra study time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<p>Learning Spanish vocabulary passively involves integrating the language into activities you already do daily, like reading news, blogs, or articles online. Instead of setting aside dedicated time for flashcards, you encounter new words in their natural environment.</p><p>FlashSpanish makes this possible by acting as a seamless bridge during your normal browsing. When you read an English article and come across a Spanish word, or vice versa, you can simply hover over it to see the translation immediately. This method anchors the vocabulary to the context of what you're reading, enhancing retention without the need for extra study time.</p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the best way to learn Spanish while browsing the internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<p>The best way to learn Spanish while browsing is to use tools that provide immediate translations and allow you to save words for later review, without interrupting your reading flow. Contextual learning is highly effective because you see how words are actually used in sentences.</p><p>With the FlashSpanish Chrome extension, your regular internet browsing transforms into a continuous learning opportunity. It seamlessly provides hover translations, ensuring that every article or webpage you read can help build your Spanish vocabulary effortlessly.</p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a Chrome extension that translates Spanish words on hover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<p>Yes, there are a few extensions designed for this, but many are clunky or require too many clicks, which disrupts the reading experience.</p><p>FlashSpanish is specifically built as a lightweight Chrome extension that translates Spanish words instantly on hover. It requires zero extra clicks to see a translation, keeping you focused on the content while subtly building your vocabulary.</p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I learn Spanish vocabulary in context instead of isolated flashcards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<p>Learning in context means encountering new words within full sentences, paragraphs, or articles. This helps you understand nuances, grammar, and proper usage, which isolated flashcards often fail to provide.</p><p>FlashSpanish excels at this by allowing you to learn words exactly where you find them—in real articles, forums, or blogs. Because you see the translation right where the word lives, your brain naturally associates the new vocabulary with its authentic context.</p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I integrate Spanish learning into my daily routine without apps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<p>Absolutely. You can change your phone's language, label items in your house, or consume Spanish media. However, these methods can sometimes be overwhelming or inconvenient when you just need to get things done.</p><p>FlashSpanish offers a middle ground. It's not a traditional app that demands your full attention. It neatly integrates into your daily web browsing routine, quietly running in the background and only stepping in when you need a translation, making it the perfect low-friction learning tool.</p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between FlashSpanish and traditional language learning apps like Duolingo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<p>Traditional apps like Duolingo use gamification and structured lessons that require you to set aside specific time blocks. While effective for some, they can often feel like extra homework and lack the real-world context of the language.</p><p>FlashSpanish takes a completely different approach. It requires zero dedicated study time. Instead of pulling you into an app, it brings the learning to wherever you are already browsing on the internet. You learn organically through context, making it a sustainable habit rather than a daily chore.</p>"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- 1. Header Section -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="assets/icon.png" alt="FlashSpanish Logo" width="48" height="48">
+                <div class="logo">FlashSpanish</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Hero + Demo Section -->
+        <section class="hero-demo-section">
+            <div class="container text-center">
+                <h1 class="hero-title">Learn Spanish While You Browse.</h1>
+                <p class="hero-subtitle">Hover over any Spanish word to see instant translations. No extra study time
+                    needed.</p>
+
+                <div class="demo-wrapper">
+                    <div style="text-align: center; margin-bottom: 32px;">
+                        <a href="https://chromewebstore.google.com/detail/flashspanish-spanish-tran/iabhjmnphjobffjcddenkkodnmlnfpml?utm_source=website&utm_medium=landing-page&utm_campaign=cta"
+                            class="massive-cta" target="_blank" rel="noopener noreferrer">Get FlashSpanish Free
+                            &rarr;</a>
+                    </div>
+                    <p class="mobile-hint" style="display: none;">Install extension to try on mobile</p>
+
+                    <div class="demo-card" id="demoContainer">
+                        <p class="demo-spanish-text">
+                            &quot;<span class="spanish-word" data-translation="When">Cuando</span>
+                            <span class="spanish-word" data-translation="I started / I began">empecé</span>
+                            <span class="spanish-word" data-translation="to learn">a aprender</span>
+                            <span class="spanish-word" data-translation="Spanish">español</span>,
+                            <span class="spanish-word" data-translation="never">nunca</span>
+                            <span class="spanish-word" data-translation="I found / I used to find">encontraba</span>
+                            <span class="spanish-word" data-translation="time">tiempo</span>
+                            <span class="spanish-word" data-translation="to / in order to">para</span>
+                            <span class="spanish-word" data-translation="study">estudiar</span>.
+                            <span class="spanish-word" data-translation="I tried">Probé</span>
+                            <span class="spanish-word" data-translation="many">muchas</span>
+                            <span class="spanish-word" data-translation="apps / applications">aplicaciones</span>
+                            <span class="spanish-word" data-translation="but">pero</span>
+                            <span class="spanish-word" data-translation="they felt">se sentían</span>
+                            <span class="spanish-word" data-translation="like">como</span>
+                            <span class="spanish-word" data-translation="homework / task">tarea</span>
+                            <span class="spanish-word" data-translation="extra">extra</span>.
+                            <span class="spanish-word" data-translation="I needed / I used to need">Necesitaba</span>
+                            <span class="spanish-word" data-translation="something">algo</span>
+                            <span class="spanish-word" data-translation="that">que</span>
+                            <span class="spanish-word" data-translation="would work">funcionara</span>
+                            <span class="spanish-word" data-translation="while">mientras</span>
+                            <span class="spanish-word" data-translation="I did / I was doing">hacía</span>
+                            <span class="spanish-word" data-translation="the things">las cosas</span>
+                            <span class="spanish-word" data-translation="that I already do">que ya hago</span>
+                            <span class="spanish-word" data-translation="every day">todos los días</span>.&quot;
+                        </p>
+                        <div class="demo-tooltip" id="demoTooltip"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FAQ Section -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How can I learn Spanish vocabulary passively without extra study time?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Learning Spanish vocabulary passively involves integrating the language into activities
+                                you already do daily, like reading news, blogs, or articles online. Instead of setting
+                                aside dedicated time for flashcards, you encounter new words in their natural
+                                environment.</p>
+                            <p>FlashSpanish makes this possible by acting as a seamless bridge during your normal
+                                browsing. When you read an English article and come across a Spanish word, or vice
+                                versa, you can simply hover over it to see the translation immediately. This method
+                                anchors the vocabulary to the context of what you're reading, enhancing retention
+                                without the need for extra study time.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What's the best way to learn Spanish while browsing the internet?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>The best way to learn Spanish while browsing is to use tools that provide immediate
+                                translations and allow you to save words for later review, without interrupting your
+                                reading flow. Contextual learning is highly effective because you see how words are
+                                actually used in sentences.</p>
+                            <p>With the FlashSpanish Chrome extension, your regular internet browsing transforms into a
+                                continuous learning opportunity. It seamlessly provides hover translations, ensuring
+                                that every article or webpage you read can help build your Spanish vocabulary
+                                effortlessly.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Is there a Chrome extension that translates Spanish words on hover?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, there are a few extensions designed for this, but many are clunky or require too
+                                many clicks, which disrupts the reading experience.</p>
+                            <p>FlashSpanish is specifically built as a lightweight Chrome extension that translates
+                                Spanish words instantly on hover. It requires zero extra clicks to see a translation,
+                                keeping you focused on the content while subtly building your vocabulary.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How do I learn Spanish vocabulary in context instead of isolated flashcards?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Learning in context means encountering new words within full sentences, paragraphs, or
+                                articles. This helps you understand nuances, grammar, and proper usage, which isolated
+                                flashcards often fail to provide.</p>
+                            <p>FlashSpanish excels at this by allowing you to learn words exactly where you find them—in
+                                real articles, forums, or blogs. Because you see the translation right where the word
+                                lives, your brain naturally associates the new vocabulary with its authentic context.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Can I integrate Spanish learning into my daily routine without apps?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. You can change your phone's language, label items in your house, or consume
+                                Spanish media. However, these methods can sometimes be overwhelming or inconvenient when
+                                you just need to get things done.</p>
+                            <p>FlashSpanish offers a middle ground. It's not a traditional app that demands your full
+                                attention. It neatly integrates into your daily web browsing routine, quietly running in
+                                the background and only stepping in when you need a translation, making it the perfect
+                                low-friction learning tool.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What's the difference between FlashSpanish and traditional language learning apps like
+                            Duolingo?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Traditional apps like Duolingo use gamification and structured lessons that require you
+                                to set aside specific time blocks. While effective for some, they can often feel like
+                                extra homework and lack the real-world context of the language.</p>
+                            <p>FlashSpanish takes a completely different approach. It requires zero dedicated study
+                                time. Instead of pulling you into an app, it brings the learning to wherever you are
+                                already browsing on the internet. You learn organically through context, making it a
+                                sustainable habit rather than a daily chore.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 FlashSpanish</p>
+            <div class="footer-links">
+                <a href="#">Contact</a>
+                <span class="divider">|</span>
+                <a href="https://mck4yy.github.io/flashspanish-privacy/privacy.html" target="_blank"
+                    rel="noopener noreferrer">Privacy Policy</a>
+                <span class="divider">|</span>
+                <a href="https://chromewebstore.google.com/detail/flashspanish-spanish-tran/iabhjmnphjobffjcddenkkodnmlnfpml?utm_source=website&utm_medium=landing-page&utm_campaign=cta"
+                    target="_blank" rel="noopener noreferrer">Chrome
+                    Web Store</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // FAQ Accordion Logic
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+                    // Close all others
+                    faqQuestions.forEach(otherBtn => {
+                        otherBtn.setAttribute('aria-expanded', 'false');
+                        otherBtn.nextElementSibling.style.maxHeight = null;
+                        otherBtn.querySelector('.faq-icon').textContent = '+';
+                    });
+
+                    if (!expanded) {
+                        btn.setAttribute('aria-expanded', 'true');
+                        btn.nextElementSibling.style.maxHeight = btn.nextElementSibling.scrollHeight + "px";
+                        btn.querySelector('.faq-icon').textContent = '−';
+                    }
+                });
+            });
+
+            // Interactive Demo Logic
+            const tooltip = document.getElementById('demoTooltip');
+            const demoWords = document.querySelectorAll('.spanish-word');
+            const demoContainer = document.getElementById('demoContainer');
+
+            // Check touch capability to show install hint on mobile
+            const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+            if (isTouchDevice) {
+                document.querySelector('.mobile-hint').style.display = 'block';
+            }
+
+            if (tooltip && demoWords.length > 0 && demoContainer) {
+                const showTooltip = (word) => {
+                    const translation = word.getAttribute('data-translation');
+                    if (!translation) return;
+
+                    demoWords.forEach(w => w.classList.remove('active'));
+                    word.classList.add('active');
+
+                    tooltip.textContent = translation;
+                    tooltip.classList.add('visible');
+
+                    const wordRect = word.getBoundingClientRect();
+                    const containerRect = demoContainer.getBoundingClientRect();
+
+                    // ALWAYS position below the word
+                    let topPosition = wordRect.bottom - containerRect.top + 10;
+                    let leftPosition = wordRect.left - containerRect.left + (wordRect.width / 2) - (tooltip.offsetWidth / 2);
+
+                    // Prevent tooltip from overflowing horizontally
+                    if (leftPosition < 10) leftPosition = 10;
+                    if (leftPosition + tooltip.offsetWidth > containerRect.width - 10) {
+                        leftPosition = containerRect.width - tooltip.offsetWidth - 10;
+                    }
+
+                    tooltip.style.top = topPosition + 'px';
+                    tooltip.style.left = leftPosition + 'px';
+                };
+
+                demoWords.forEach(word => {
+                    if (!isTouchDevice) {
+                        word.addEventListener('mouseenter', () => showTooltip(word));
+                        word.addEventListener('mouseleave', () => {
+                            tooltip.classList.remove('visible');
+                            word.classList.remove('active');
+                        });
+                    } else {
+                        word.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            showTooltip(word);
+                        });
+                    }
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('spanish-word')) {
+                        tooltip.classList.remove('visible');
+                        demoWords.forEach(w => w.classList.remove('active'));
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

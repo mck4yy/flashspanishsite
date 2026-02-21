@@ -1,0 +1,391 @@
+/* Base styles and variables */
+:root {
+    --bg-primary: #FAFAF7;
+    --bg-white: #FFFFFF;
+    --text-primary: #2D2D2D;
+    --text-heading: #1A1A1A;
+    --text-muted: #5A5A5A;
+    --border-color: #E8E8E5;
+    --accent: #48D68B;
+    --accent-hover: #3BC278;
+    --demo-highlight: rgba(255, 140, 66, 0.2);
+    /* Transparent orange highlight */
+    --footer-bg: #F0F0ED;
+    --faq-bg: rgba(72, 214, 139, 0.03);
+
+    --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-tooltip: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    --transition-fast: 100ms ease;
+    --transition-snappy: 150ms ease;
+    --transition-normal: 300ms ease;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    /* Wider to allow demo card to expand */
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 1. Header Section */
+.site-header {
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 2rem;
+    /* Give minimal edge padding */
+    max-width: 1400px;
+    /* Push logo further to the edges */
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+@keyframes pulse-glow {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(72, 214, 139, 0.4);
+    }
+
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 6px 30px rgba(72, 214, 139, 0.8);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(72, 214, 139, 0.4);
+    }
+}
+
+.massive-cta {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    padding: 16px 36px;
+    font-size: 20px;
+    border-radius: 50px;
+    /* Pillow-shaped / fully rounded */
+    font-weight: 700;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 20px rgba(72, 214, 139, 0.4);
+    letter-spacing: -0.01em;
+    animation: pulse-glow 3s infinite ease-in-out;
+}
+
+.massive-cta:hover {
+    background-color: var(--accent-hover);
+    color: var(--bg-primary);
+    box-shadow: 0 6px 24px rgba(72, 214, 139, 0.6);
+    transform: translateY(-2px) scale(1.02);
+    animation-play-state: paused;
+}
+
+/* 2. Hero + Demo Section */
+.hero-demo-section {
+    padding: 80px 0 100px;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--text-heading);
+    margin: 0 0 16px 0;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.hero-subtitle {
+    font-size: 22px;
+    color: var(--text-muted);
+    margin: 0 0 50px 0;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Interactive Demo */
+.demo-wrapper {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    /* Added extra bottom margin below the entire widget/button combo */
+}
+
+.demo-hint {
+    font-size: 18px;
+    color: var(--accent);
+    margin: 0 0 16px 0;
+    font-weight: 600;
+}
+
+.mobile-hint {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin: 0 0 16px 0;
+}
+
+.demo-card {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 40px 50px;
+    border-radius: 32px;
+    /* More rounded widget */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    position: relative;
+    text-align: left;
+    max-width: 1100px;
+    /* Expand fully */
+    margin: 40px auto 0 auto;
+    /* Added gap below the CTA button */
+}
+
+.demo-spanish-text {
+    font-size: 32px;
+    font-weight: 600;
+    /* Semi-bold */
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Demo Hover Interaction */
+.spanish-word {
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color var(--transition-snappy), color var(--transition-snappy), box-shadow var(--transition-snappy);
+    /* No padding to perfectly preserve native word spacing */
+}
+
+.spanish-word:hover,
+.spanish-word.active {
+    background-color: var(--demo-highlight);
+    box-shadow: 0 0 0 4px var(--demo-highlight);
+    /* Visual padding without layout shift */
+    color: var(--text-primary);
+}
+
+/* Tooltip precisely matching extension */
+.demo-tooltip {
+    position: absolute;
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    font-size: 20px;
+    /* Larger font */
+    padding: 12px 20px;
+    /* Larger padding */
+    border-radius: 8px;
+    /* Apple curve */
+    box-shadow: var(--shadow-tooltip);
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+    white-space: nowrap;
+    z-index: 100;
+}
+
+.demo-tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 3. FAQ Section */
+.faq-section {
+    padding: 20px 0 80px 0;
+    /* Reduced top padding to pull it closer to the demo section */
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-heading);
+    text-align: center;
+    margin: 0 0 60px 0;
+}
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-heading);
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    transition: color var(--transition-fast);
+}
+
+.faq-question:hover {
+    color: var(--accent);
+}
+
+.faq-icon {
+    color: var(--accent);
+    font-size: 24px;
+    font-weight: 400;
+    transition: transform var(--transition-normal);
+}
+
+/* Accordion expanded state */
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+    /* Optional: plus turns into X */
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-normal) ease-out;
+}
+
+.faq-answer p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 16px 0 0 0;
+}
+
+.faq-answer p+p {
+    margin-top: 12px;
+}
+
+/* 4. Footer */
+.site-footer {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.footer-container p {
+    margin: 0 0 16px 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.divider {
+    color: var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 16px 20px;
+    }
+
+    .hero-demo-section {
+        padding: 60px 20px 80px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .demo-card {
+        padding: 24px;
+    }
+
+    .faq-section {
+        padding: 60px 20px;
+    }
+
+    .faq-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .faq-question {
+        font-size: 16px;
+    }
+}
